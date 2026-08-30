@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pour Padula</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="shortcut icon" href="heart.png" type="image/x-icon">
+</head>
+<body>
+<div id="app">
+  <canvas id="petal-canvas"></canvas>
+
+  <!-- LOGIN -->
+  <div class="screen active" id="screen-login">
+    <div class="card" id="login-card">
+      <div class="seal">♥</div>
+      <span class="eyebrow">Un secret à découvrir</span>
+      <h1 class="title">Entre, si tu sais qui tu es</h1>
+      <p class="subtitle">Ce site n'existe que pour une seule personne.</p>
+
+      <form id="login-form">
+        <div class="field">
+          <label for="username">Prénom</label>
+          <input type="text" id="username" autocomplete="off" placeholder="••••••">
+          <div class="hint">Indice : le prénom de l'amoureuse de Frantzy 💕</div>
+        </div>
+        <div class="field">
+          <label for="password">Mot de passe</label>
+          <input type="text" id="password" autocomplete="off" placeholder="JJ/MM/AAAA">
+          <div class="hint">Indice : la date de notre premier bisou</div>
+        </div>
+        <button type="submit" class="primary">Entrer</button>
+        <div class="error-msg" id="error-msg"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- LETTERS GRID -->
+  <div class="screen" id="screen-grid">
+    <div class="grid-wrap">
+      <span class="eyebrow" style="color:var(--blush)">Pour toi, Padula</span>
+      <h1 class="grid-title">Nos lettres</h1>
+      <!-- <p class="grid-subtitle">Chaque enveloppe garde un petit morceau de ce que je ressens pour toi.</p> -->
+      <p class="grid-subtitle">Chaque enveloppe décrive ce que je ressens pour toi.</p>
+      <div id="letters-container"></div>
+    </div>
+  </div>
+
+  <div class="screen" id="screen-letter">
+    <button class="back-btn" id="back-to-grid">← Retour aux lettres</button>
+    <div class="envelope-wrap">
+      <div class="envelope" id="envelope">
+        <div class="envelope-body"></div>
+        <div class="envelope-flap"></div>
+        <div class="envelope-seal">♥</div>
+      </div>
+      <p class="tap-hint" id="tap-hint">Touche l'enveloppe pour l'ouvrir</p>
+    </div>
+
+    <div class="letter-paper" id="letter-paper">
+      <p class="letter-greeting" id="letter-greeting"></p>
+      <p class="letter-body" id="letter-text"></p>
+      <p class="letter-sign" id="letter-sign"></p>
+      <button class="continue-btn" id="continue-btn">Continuer</button>
+    </div>
+  </div>
+
+  <!-- PROPOSAL -->
+  <div class="screen" id="screen-proposal">
+    <span class="eyebrow" style="color:var(--blush)">Padula</span>
+    <h1 class="propose-title">Veux-tu être officiellement ma petite amie pour la vie&nbsp;?</h1>
+    <div class="btn-row" id="btn-row">
+      <button class="btn-yes" id="btn-yes">Oui ❤️</button>
+      <button class="btn-no" id="btn-no">Non</button>
+    </div>
+    <p class="dodge-caption" id="dodge-caption">&nbsp;</p>
+  </div>
+
+  <!-- YES CELEBRATION -->
+  <div class="screen" id="screen-yes">
+    <button class="back-btn" id="back-to-grid">← Retour aux lettres</button>
+    <div class="heart-burst">🥳 🥳 🥳</div>
+    <h1 class="yes-title">Elle a enfin dit oui !!!!!!</h1>
+    <p class="yes-sub">À partir d'aujourd'hui, nous sommes officiellement en couple, pour de vrai.<br>Mon amoureuse, la future présidente 🤣🤣🤣🤣</p>
+    <h1 class="yes-title">JE T'AIME PADULA ❤️</h1>
+    <!-- <img src="./photo.jpg" alt="" width="191" height="277"> -->
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
